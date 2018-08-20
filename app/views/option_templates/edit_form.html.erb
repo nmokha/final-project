@@ -1,0 +1,53 @@
+<!-- Validation failure messages -->
+<% if @option.errors.any? %>
+  <% @option.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit option #<%= @option.id %>
+</h1>
+
+<hr>
+
+<form action="/update_option/<%= @option.id %>" method="post">
+  <!-- Label and input for decision_id -->
+  <div class="form-group">
+    <label for="decision_id">
+      Decision
+    </label>
+
+    <input type="text" id="decision_id" name="decision_id" class="form-control" value="<%= @option.decision_id %>">
+  </div>
+
+  <!-- Label and input for description -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <input type="text" id="description" name="description" class="form-control" value="<%= @option.description %>">
+  </div>
+
+  <!-- Label and input for user_id -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @option.user_id %>">
+  </div>
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update option
+  </button>
+</form>
+
+<hr>
+
+<a href="/options">
+  Go back
+</a>

@@ -1,0 +1,56 @@
+<h1>
+  Option #<%= @option.id %> details
+</h1>
+
+<a href="/options/<%= @option.id %>/edit">
+  Edit option
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    Decision
+  </dt>
+  <dd>
+    <%= @option.decision_id %>
+  </dd>
+
+  <dt>
+    Description
+  </dt>
+  <dd>
+    <%= @option.description %>
+  </dd>
+
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @option.user_id %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@option.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@option.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_option/<%= @option.id %>">
+  Delete option
+</a>
+
+<hr>
+
+<a href="/options">
+  Go back
+</a>

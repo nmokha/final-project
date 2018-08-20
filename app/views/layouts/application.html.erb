@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FinalProject</title>
+    <title>
+    Hardo
+    </title>
+    
+    <%= render "shared/bootstrapcdn_assets" %>
+    
     <%= csrf_meta_tags %>
 
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
@@ -26,8 +31,16 @@
   </head>
 
   <body>
+    
+  <%= render "shared/navbar" %>
+  <div class="container">
+    <%= render "shared/flashes" %>
+    
     <%= yield %>
 
     <%= dev_tools if Rails.env.development? %>
+    
+  </div>
+  
   </body>
 </html>

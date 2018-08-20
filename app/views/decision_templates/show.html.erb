@@ -1,0 +1,49 @@
+<h1>
+  Decision #<%= @decision.id %> details
+</h1>
+
+<a href="/decisions/<%= @decision.id %>/edit">
+  Edit decision
+</a>
+
+<hr>
+
+<dl>
+  <dt>
+    User
+  </dt>
+  <dd>
+    <%= @decision.user_id %>
+  </dd>
+
+  <dt>
+    Title
+  </dt>
+  <dd>
+    <%= @decision.title %>
+  </dd>
+
+  <dt>
+    Created at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@decision.created_at) %> ago
+  </dd>
+
+  <dt>
+    Updated at
+  </dt>
+  <dd>
+    <%= time_ago_in_words(@decision.updated_at) %> ago
+  </dd>
+</dl>
+
+<a href="/delete_decision/<%= @decision.id %>">
+  Delete decision
+</a>
+
+<hr>
+
+<a href="/decisions">
+  Go back
+</a>

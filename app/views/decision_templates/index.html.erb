@@ -1,0 +1,66 @@
+<h1>
+  All decisions
+</h1>
+
+<a href="/decisions/new">
+  Add a new decision
+</a>
+
+<hr>
+
+<table class="table">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      User
+    </th>
+
+    <th>
+      Title
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @decisions.each do |decision| %>
+  <tr>
+    <td>
+      <%= decision.id %>
+    </td>
+
+    <td>
+      <%= decision.user_id %>
+    </td>
+
+    <td>
+      <%= decision.title %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(decision.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(decision.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/decisions/<%= decision.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>

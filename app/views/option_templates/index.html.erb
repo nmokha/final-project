@@ -1,0 +1,74 @@
+<h1>
+  All options
+</h1>
+
+<a href="/options/new">
+  Add a new option
+</a>
+
+<hr>
+
+<table class="table">
+  <tr>
+    <th>
+      ID
+    </th>
+
+    <th>
+      Decision
+    </th>
+
+    <th>
+      Description
+    </th>
+
+    <th>
+      User
+    </th>
+
+    <th>
+      Created at
+    </th>
+
+    <th>
+      Updated at
+    </th>
+
+    <th>
+    </th>
+  </tr>
+
+  <% @options.each do |option| %>
+  <tr>
+    <td>
+      <%= option.id %>
+    </td>
+
+    <td>
+      <%= option.decision_id %>
+    </td>
+
+    <td>
+      <%= option.description %>
+    </td>
+
+    <td>
+      <%= option.user_id %>
+    </td>
+
+    <td>
+      <%= time_ago_in_words(option.created_at) %> ago
+    </td>
+
+    <td>
+      <%= time_ago_in_words(option.updated_at) %> ago
+    </td>
+
+    <td>
+      <a href="/options/<%= option.id %>">
+        Show details
+      </a>
+    </td>
+  </tr>
+  <% end %>
+</table>
